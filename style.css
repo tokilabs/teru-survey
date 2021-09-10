@@ -1,0 +1,66 @@
+body {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  width: 200px;
+  align-items: center;
+  appearance: button;
+  background-color: #04a361;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "RM Neue", sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 21px;
+  text-align: center;
+  text-transform: none;
+  transition: color 0.13s ease-in-out, background 0.13s ease-in-out,
+    opacity 0.13s ease-in-out, box-shadow 0.13s ease-in-out;
+}
+
+.button:active {
+  background-color: #00bf6f;
+}
+
+.button:hover {
+  background-color: #00bf6f;
+}
+
+.button.languagePicker {
+  width: auto;
+  background-color: #333;
+}
+
+.button.languagePicker.selected {
+  background-color: #00bf6f;
+}
+
+#logo {
+  height: 100px;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+#languages {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+#en,
+#pt {
+  min-width: 400px;
+  max-width: 45%;
+  text-align: center;
+}

@@ -1,35 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
     <header>
-        <h1>Thank you for your time!</h1>
-        <h1>Obrigado pelo seu tempol</h1>
+      <img id="logo" src="logo.png" />
+      <div>
+        <p>Language / Idioma</p>
+        <button id="pickEn" class="button languagePicker" onclick="pickLanguage('en')">English</button>
+        <button id="pickPt" class="button languagePicker" onclick="pickLanguage('pt')">Português</button>
+      </div>
     </header>
-    
-    <div id="en">
+    <div id="languages">
+      <div id="en">
+        <h1>Thank you for your time!</h1>
         <p>
-        <a class="button" href="https://pt.surveymonkey.com/r/psychologistteru">I'm a Therapist</a>
-    </p>
-    <p>
-        <a class="button" href="https://pt.surveymonkey.com/r/patientteru">I'm a Patient</a>
-    </p>
+          We are a team of two women therapists and one software engineer that joined forces to create an app
+          whith the goal of increaing the efficiency of the therapeutic process.
+        </p>
+        <p>
+          Although we all have many years in our career and our engineer joined us because he felt the need
+          for an app like this during his own depression treatment, we surely don't think we know everything!
+        </p>
+        <p>
+          This app is being built for you! So we want to hear what's important for you and invite you
+          to help design a tool that will really make you happy.
+        </p>
+        <p>
+          <a class="button" href="https://pt.surveymonkey.com/r/psychologistteru">I'm a Therapist</a>
+        </p>
+        <p>
+          <a class="button" href="https://pt.surveymonkey.com/r/patientteru">I'm a Patient</a>
+        </p>
+      </div>
+      <div id="pt">
+        <h1>Obrigado pelo seu tempo!</h1>
+        <p>
+          Somos um time de duas psicólogas e um engenheiro de software que se juntaram para criar um aplicativo
+          com o objetivo de aumentar a eficiência do processo terapêutico.
+        </p>
+        <p>
+          Embora todos tenhamos anos de carreira e nosso engenheiro tenha se juntado à nós por sentir falta de um
+          aplicativo como esse durante seu próprio tratamento de depressão, a gente não acha que sabe tudo!
+        </p>
+        <p>
+          Esse app está sendo feito pra você! Por isso, queremos ouvir o que é importante pra você e te convidar a
+          moldar uma ferramenta que te deixe realmente feliz.
+        </p>
+        <p>
+          <a class="button" href="https://pt.surveymonkey.com/r/terapeutasteru">Sou um Psicólogo</a>
+        </p>
+        <p>
+          <a class="button" href="https://pt.surveymonkey.com/r/pacientesteru">Sou um Paciente</a>
+        </p>
+      </div>
     </div>
-    <div id="pt">
-        <p>
-        <a class="button" href="https://pt.surveymonkey.com/r/terapeutasteru">Sou Psicólogo</a>
-    </p>
-    <p>
-        <a class="button" href="https://pt.surveymonkey.com/r/pacientesteru">Sou Paciente</a>
-    </p>
-    </div>    
+    <script>
+      function pickLanguage(id) {
+        if (id === 'en') {
+          document.getElementById('en').style.display = 'block';
+          document.getElementById('pt').style.display = 'none';
+          document.getElementById('pickEn').classList.add('selected');
+          document.getElementById('pickPt').classList.remove('selected');
+        }
+        else {
+          document.getElementById('en').style.display = 'none';
+          document.getElementById('pt').style.display = 'block';
+          document.getElementById('pickPt').classList.add('selected');
+          document.getElementById('pickEn').classList.remove('selected');
+        }
+      }
 
-</body>
+      if (navigator.language.startsWith('pt')) {
+        pickLanguage('pt');
+      }
+      else {
+        pickLanguage('en');
+      }
+    </script>
+  </body>
+
 </html>
